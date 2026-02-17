@@ -45,7 +45,7 @@ body {
 }
 @media screen and (min-width: 1024px) {
 	.container {
-		padding-top: 80px;
+	/* 	padding-top: 60px; */
 		padding-right: /* 156px */ 10.31vw;
 		padding-left: /* 156px */ 10.31vw;
 	}

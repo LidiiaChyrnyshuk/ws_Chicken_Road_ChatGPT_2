@@ -18,10 +18,11 @@
 @media screen and (min-width: 1024px) {
 	.overlay {
 		background-image: url(../images/body/BG_desk.webp);
-		padding-top: 80px;
+		/* padding-top:60px; */
 		padding-right: /* 156px */ 10.31vw;
 		padding-left: /* 156px */ 10.31vw;
 	}
+
 	.wrapper {
 		position: relative;
 		width: 100%;
@@ -30,9 +31,10 @@
 		align-items: center;
 		justify-content: center;
 		gap: 20px;
-		
-		
 	}
+/* 	.overlay-logo {
+		margin-bottom: 20px;
+	} */
 }
 @media screen and (min-width: 1455px) {
 	.wrapper {
@@ -91,11 +93,6 @@
 	z-index: 20;
 	overflow: hidden;
 }
-@media screen and (min-width: 1024px) {
-	.game-iframe {
-		
-	}
-}
 
 .game-iframe {
 	width: 390px;
@@ -151,7 +148,7 @@
 	will-change: opacity, transform;
 	margin-bottom: 16px;
 }
-@media screen and (min-width: 1455px) {
+@media screen and (min-width: 1750px) {
 	.tip {
 		margin-bottom: 24px;
 	}
