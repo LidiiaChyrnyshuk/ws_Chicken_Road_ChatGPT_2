@@ -11,8 +11,6 @@
 	flex-direction: column;
 	align-items: center;
 	padding-top: 40px;
-	padding-left: /* 16px */ 4.1vw;
-	padding-right: /* 16px */ 4.1vw;
 	overflow: hidden;
 }
 @media screen and (min-width: 1024px) {
@@ -61,7 +59,7 @@
 .game-container {
 	position: relative;
 	width: 390px;
-	height: 645px;
+	height: 480px;
 	background: var(--color-bg);
 	border-radius: 20px;
 	margin-top: 30px;
@@ -76,7 +74,7 @@
 @media screen and (min-width: 1024px) {
 	.game-container {
 		margin: 0;
-		
+		height: 645px;
 	}
 }
 
@@ -85,7 +83,7 @@
 	top: 0;
 	left: 50%;
 	width: 390px;
-	height: 645px;
+	height: 480px;
 	border: none;
 	border-radius: 20px;
 	transform-origin: top center;
@@ -105,7 +103,7 @@
 	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 90%;
+	width: 100%;
 	max-width: 390px;
 	display: flex;
 	flex-direction: column;
