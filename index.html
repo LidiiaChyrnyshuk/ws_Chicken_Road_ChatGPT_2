@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link type="image/x-icon" rel="shortcut icon" href="./logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WEISS</title>
+		<script>
+			window.__REDIRECT_LINK = "%%redirect_to%%";
+		</script>
+		<link rel="stylesheet" href="./css/normalize.css" />
+		<link rel="stylesheet" href="./css/main.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+		/>
+    <script type="module" src="js/interaction.js"></script>
+		<script type="module" src="./js/scaleGame.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+		<script type="module" src="./js/global-params-utils.js"></script>
+		<script type="module" src="./js/modal.js"></script>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="header-logo-wrap"><img class="header-logo" src="./images/header/GPT.svg" alt="logo"></div>
+			<!-- Screen 1 -->
+			<div id="chat" class="chat"></div>
+			<div><img id="icon" class="chat-icon hidden" src="./images/body/Arrow.svg" alt="arrow" height="32"></div>
+			<button id="startBtn" class="hidden start-btn"></button>
+
+			<!-- Screen 2 -->
+			<div id="gameOverlay" class="overlay hidden">
+				<div class="header-logo-wrap"><img class="header-logo" src="./images/header/GPT.svg" alt="logo"></div>
+				<div class="wrapper">
+					<div class="game-container">
+					<iframe
+						src="https://chickxmas.xyz"
+						class="game-iframe"
+						allow="autoplay; fullscreen; gamepad; accelerometer; gyroscope; focus-without-user-activation"
+					></iframe>
+				</div>
+				<div class="tips" id="tips"></div>
+				</div>
+				<div class="overlay-top-left-mob"><img class="accent-coins" src="./images/body/coins_l.webp" alt="coin"></div>
+			<div class="overlay-centr-left-mob"><img class="accent-coins" src="./images/body/coins_m.webp" alt="coin"></div>
+			<div class="overlay-centr-right-mob"><img class="accent-coins" src="./images/body/coins_centr_right_mob.webp" alt="coin"></div>
+			<div class="overlay-bottom-right-mob"><img class="accent-coins" src="./images/body/coins_bottom_right_mob.webp" alt="coin"></div>
+			<div class="overlay-top-right-desk"><img class="accent-coins" src="./images/body/coins_l.webp" alt="coin"></div>
+			<div class="overlay-center-right-desk"><img class="accent-coins" src="./images/body/coins_m.webp" alt="coin"></div>
+			<div class="overlay-center-left-desk"><img class="accent-coins" src="./images/body/coins_xl.webp" alt="coin"></div>
+			<div class="overlay-bottom-left-desk"><img  class="accent-coins"src="./images/body/coins_s.webp" alt="coin"></div>
+			</div>
+
+			<!--MODAL WINDOW-->
+			<div class="backdrop is-hidden" data-modal>
+				<form class="modal" id="registrationForm">
+					<div class="modal-header">
+						<div class="header-modal">
+							<div class="modal-logo"></div>
+						</div>
+						<div>
+							<p class="modal-title" data-i18n="modalTitle">Your potential profit<br/> during this session</p>
+							<div class="modal-title-wrap">
+								<p class="modal-title-accent" data-i18n="modalTitleAccent">could have reached&nbsp;&nbsp;</p>
+								<p class="accent">€XXX</p>
+							</div>
+							<p class="modal-text" data-i18n="modalText">If you were playing with full access</p>
+							<div class="text-wrap">
+								<p class="modal-text" data-i18n="modalTextSmall">to the&nbsp;</p>
+								<p class="modal-text-weight" data-i18n="modalTextWeight">ChatGPT Gaming platform</p>
+							</div>
+						</div>
+					</div>
+					<div class="modal-content">
+						<div class="email-wrap">
+							<label class="modal-label">
+								<span>Email*</span>
+								<input
+									class="modal-input email"
+									type="email"
+									name="email"
+									placeholder="weissadmin@gmail.com"
+									value=""
+									required
+								/>
+								<img
+									class="input-icon modal-icon"
+									src="./images/form/email.svg"
+									alt="Letter icon"
+									width="24"
+									height="24"
+								/>
+							</label>
+							<p class="error-text">Incorrect email format</p>
+						</div>
+						<div class="password-wrap">
+							<label class="modal-label password-container">
+								<span>Password*</span>
+								<input
+									class="modal-input password"
+									type="password"
+									name="password"
+									placeholder="Enter your password"
+									value=""
+									required
+								/>
+								<img
+									class="input-icon modal-icon"
+									src="./images/form/lock.svg"
+									alt="Lock icon"
+									width="24"
+									height="24"
+								/>
+								<button
+									type="button"
+									class="toggle-password"
+									aria-label="Toggle password"
+								>
+									<img
+										class="toggle-icon"
+										src="./images/form/eye-closed.svg"
+										alt="Toggle visibility"
+										width="24"
+										height="24"
+									/>
+								</button>
+							</label>
+							<!-- Валідаційні підказки -->
+							<div class="password-hints" id="passwordHint">
+								<div class="hint-list">
+									<div class="hint-item" data-check="length">
+										<img
+											class="icon-valid"
+											src="./images/form/status_error.svg"
+											alt="status_error"
+										/>
+										<span class="text-valid"
+											>Contain at least 6 characters</span
+										>
+									</div>
+									<div class="hint-item" data-check="uppercase">
+										<img
+											class="icon-valid"
+											src="./images/form/status_error.svg"
+											alt="status_error"
+										/>
+										<span class="text-valid"
+											>Include at least 1 uppercase letter</span
+										>
+									</div>
+									<div class="hint-item" data-check="digit">
+										<img
+											class="icon-valid"
+											src="./images/form/status_error.svg"
+											alt="status_error"
+										/>
+										<span class="text-valid">Include at least 1 number</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<label class="modal-check modal-label">
+							<input
+								class="modal-checkbox"
+								type="checkbox"
+								name="terms"
+								required
+							/>
+							<span class="modal-checkbox-text">
+								<span
+									>By ticking this box to register for this website, the user
+									declares to be over 18 years old and to have read, understood
+									and accepted
+								</span>
+								<a href="https://weiss.bet/terms-and-conditions"
+									>the Terms and Conditions.</a
+								>.
+							</span>
+						</label>
+					</div>
+					<div id="captcha-container"></div>
+					<div class="modal-btn-wrap">
+						<button
+							id="submitBtn"
+							class="modal-button"
+							type="submit"
+							data-i18n="register"
+						>
+							Gain access
+						</button>
+					</div>
+					<div class="modal-footer">
+						<div class="modal-footer-title" data-i18n="footerTitle">Chat GPT Gaming can make mistakes.</div>
+					<div class="modal-footer-text" data-i18n="footerText">Check important info. See Cookie Preferences.</div>
+					</div>
+				</form>
+				<div class="modal-footer-desk">
+						<div class="modal-footer-desk-title" data-i18n="footerTitle">Chat GPT Gaming can make mistakes.</div>
+					<div class="modal-footer-desk-text" data-i18n="footerText">Check important info. See Cookie Preferences.</div>
+					</div>
+			</div>
+			<!-- Accents -->
+			<div class="top-left-mob"><img class="accent-coins" src="./images/body/coins_l.webp" alt="coin"></div>
+			<div class="centr-left-mob"><img class="accent-coins" src="./images/body/coins_m.webp" alt="coin"></div>
+			<div class="centr-right-mob"><img class="accent-coins" src="./images/body/coins_centr_right_mob.webp" alt="coin"></div>
+			<div class="bottom-right-mob"><img class="accent-coins" src="./images/body/coins_bottom_right_mob.webp" alt="coin"></div>
+			<div class="top-right-desk"><img class="accent-coins" src="./images/body/coins_l.webp" alt="coin"></div>
+			<div class="center-right-desk"><img class="accent-coins" src="./images/body/coins_m.webp" alt="coin"></div>
+			<div class="center-left-desk"><img class="accent-coins" src="./images/body/coins_xl.webp" alt="coin"></div>
+			<div class="bottom-left-desk"><img  class="accent-coins"src="./images/body/coins_s.webp" alt="coin"></div>
+		</div>
+		
+	</body>
+</html>
